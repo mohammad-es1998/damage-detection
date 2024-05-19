@@ -1,0 +1,46 @@
+tags:
+  - Report
+description: Endpoint to get a damage report by part and damage type
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        part:
+          type: string
+          description: The part of the car
+          example: 'Roof'
+        type:
+          type: string
+          description: The type of damage
+          example: 'scratch'
+      required:
+        - part
+        - type
+responses:
+  '200':
+    description: Damage report
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Damage report
+  '400':
+    description: Bad request
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Bad request
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

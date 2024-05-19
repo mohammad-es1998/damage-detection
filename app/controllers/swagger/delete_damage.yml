@@ -1,0 +1,26 @@
+tags:
+  - Damage
+description: Endpoint to delete damage from a car
+parameters:
+  - name: damage_id
+    in: path
+    required: true
+    type: integer
+    description: The ID of the damage to delete
+responses:
+  '200':
+    description: Damage deleted successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Damage deleted successfully
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

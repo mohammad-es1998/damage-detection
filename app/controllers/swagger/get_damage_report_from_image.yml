@@ -1,0 +1,44 @@
+tags:
+  - Car
+description: Endpoint to get a damage report from a base64-encoded image
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        image:
+          type: string
+          description: The base64-encoded image
+          example: "base-64-image"
+      required:
+        - image
+responses:
+  '200':
+    description: Damage report PDF file
+    content:
+      application/pdf:
+        schema:
+          type: string
+          format: binary
+  '400':
+    description: Bad request
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: "Bad request"
+  '500':
+    description: Internal server error
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: "Internal server error"

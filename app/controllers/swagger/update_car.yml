@@ -1,0 +1,53 @@
+tags:
+  - Car
+description: Endpoint to update an existing car
+parameters:
+  - name: plate
+    in: path
+    required: true
+    type: string
+    description: The plate number of the car to update
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        model:
+          type: string
+          description: The model of the car
+          example: 'Corolla'
+        color:
+          type: string
+          description: The color of the car
+          example: 'Red'
+        vin:
+          type: string
+          description: The VIN number of the car
+          example: '1HGCM82633A123456'
+        brand:
+          type: string
+          description: The brand of the car
+          example: 'Toyota'
+      required:
+        - model
+        - color
+        - vin
+        - brand
+responses:
+  '200':
+    description: Car updated successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Car updated successfully
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

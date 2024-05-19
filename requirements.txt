@@ -1,0 +1,11 @@
+numpy
+protobuf==3.6.1
+Keras==2.2.4
+tensorflow==1.15.5
+opencv-python
+SQLAlchemy
+flask
+pillow
+reportlab
+flask-swagger-ui
+flasgger

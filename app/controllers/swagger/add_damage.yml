@@ -1,0 +1,43 @@
+tags:
+  - Damage
+description: Endpoint to add damage to a car
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        plate:
+          type: string
+          description: The plate number of the car
+          example: 'ABC123'
+        damage_type:
+          type: string
+          description: The type of damage
+          example: 'Scratch'
+        part:
+          type: string
+          description: The part of the car that is damaged
+          example: 'Front Bumper'
+      required:
+        - plate
+        - damage_type
+        - part
+responses:
+  '201':
+    description: Damage added successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Damage added successfully
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

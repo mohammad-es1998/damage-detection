@@ -1,0 +1,40 @@
+tags:
+  - Car
+description: Endpoint to get all cars
+responses:
+  '200':
+    description: List of all cars
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          plate:
+            type: string
+          model:
+            type: string
+          color:
+            type: string
+          vin:
+            type: string
+          brand:
+            type: string
+          damages:
+            type: array
+            items:
+              type: object
+              properties:
+                plate:
+                  type: string
+                damage_type:
+                  type: string
+                part:
+                  type: string
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

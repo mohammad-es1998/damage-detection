@@ -1,0 +1,47 @@
+tags:
+  - Damage
+description: Endpoint to get damage reports by car plate number
+parameters:
+  - name: plate
+    in: query
+    required: true
+    type: string
+    description: The plate number of the car
+responses:
+  '200':
+    description: List of damage reports
+    schema:
+      type: array
+      items:
+        type: object
+        properties:
+          plate:
+            type: string
+          damage_type:
+            type: string
+          part:
+            type: string
+  '400':
+    description: Bad request
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Bad request
+  '404':
+    description: Not found
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Not found
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

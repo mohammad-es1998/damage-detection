@@ -1,0 +1,26 @@
+tags:
+  - Car
+description: Endpoint to delete a car
+parameters:
+  - name: plate
+    in: path
+    required: true
+    type: string
+    description: The plate number of the car to delete
+responses:
+  '200':
+    description: Car deleted successfully
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Car deleted successfully
+  '500':
+    description: Internal server error
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: Internal server error

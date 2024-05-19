@@ -1,0 +1,57 @@
+tags:
+  - Car
+description: Endpoint to add a new car
+parameters:
+  - name: body
+    in: body
+    required: true
+    schema:
+      type: object
+      properties:
+        plate:
+          type: string
+          description: The plate number of the car
+          example: "ABC1234"
+        model:
+          type: string
+          description: The model of the car
+          example: "Corolla"
+        color:
+          type: string
+          description: The color of the car
+          example: "Blue"
+        vin:
+          type: string
+          description: The VIN of the car
+          example: "1HGCM82633A123456"
+        brand:
+          type: string
+          description: The brand of the car
+          example: "Toyota"
+      required:
+        - plate
+        - model
+        - color
+        - vin
+        - brand
+responses:
+  '201':
+    description: Car added successfully
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: "Car added successfully"
+  '500':
+    description: Internal server error
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            message:
+              type: string
+              example: "Internal server error"
