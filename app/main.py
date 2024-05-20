@@ -1,14 +1,16 @@
+import os
+import sys
+
 from flasgger import Swagger
 from flask import Flask
-from numpy import loadtxt
-from tensorflow.keras.models import load_model
 from app.config import config
 from app.controllers.car import create_car_controller
-from app.controllers.swagger import create_swagger_controller
 from app.database.database import Database
 from app.repositories.car import CarRepository
 from app.repositories.damage import CarDamageRepository
 from app.services.car import CarService
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 
 def create_app(config_name):

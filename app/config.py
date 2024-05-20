@@ -17,10 +17,9 @@ class ProductionConfig(Config):
 class AI(Config):
     DETECTION_WEIGHT_PATH = os.getenv('DETECTION_WEIGHT_PATH',
                                       '/home/mohammad/Desktop/chal/app/ai/weights/lp-detector/wpod-net_update1')
-    OCR_DATASET = os.getenv('OCR_DATASET', b'/home/mohammad/Desktop/chal/app/ai/weights/ocr/ocr-net.data')
-    OCR_NETCFG = os.getenv('OCR_NETCFG', b'/home/mohammad/Desktop/chal/app/ai/weights/ocr/ocr-net.cfg')
-    OCR_WEIGHT = os.getenv('OCR_WEIGHT', b'/home/mohammad/Desktop/chal/app/ai/weights/ocr/ocr-net.weights')
-
+    OCR_DATASET = os.getenv('OCR_DATASET', '/home/mohammad/Desktop/chal/app/ai/weights/ocr/ocr-net.data')
+    OCR_NETCFG = os.getenv('OCR_NETCFG', '/home/mohammad/Desktop/chal/app/ai/weights/ocr/ocr-net.cfg')
+    OCR_WEIGHT = os.getenv('OCR_WEIGHT', '/home/mohammad/Desktop/chal/app/ai/weights/ocr/ocr-net.weights')
 
 config = {
     'development': DevelopmentConfig,
