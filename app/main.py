@@ -4,6 +4,7 @@ import sys
 from flasgger import Swagger
 from flask import Flask
 from app.config import config
+from tensorflow.keras.models import load_model
 from app.controllers.car import create_car_controller
 from app.database.database import Database
 from app.repositories.car import CarRepository
